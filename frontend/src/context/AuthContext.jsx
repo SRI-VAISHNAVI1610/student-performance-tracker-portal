@@ -37,25 +37,15 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password, role) => {
         try {
-            const response = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password, role }),
-            });
+            const response = await API.post('/api/auth/login', { email, password, role });
+            const data = response.data;
 
-            const data = await response.json();
-
-            if (response.ok) {
-                setUser(data);
-                localStorage.setItem('user', JSON.stringify(data));
-                return { success: true };
-            } else {
-                return { success: false, message: data.message };
-            }
+            setUser(data);
+            localStorage.setItem('user', JSON.stringify(data));
+            return { success: true };
         } catch (error) {
-            return { success: false, message: 'Server error. Please try again later.' };
+            const message = error.response?.data?.message || 'Server error. Please try again later.';
+            return { success: false, message };
         }
     };
 
