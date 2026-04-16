@@ -1,0 +1,132 @@
+.staff-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.tabs {
+    display: flex;
+    background-color: white;
+    padding: 4px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: rgba(37, 99, 235, 0.05);
+    color: var(--primary);
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-group .input-base {
+    width: auto;
+    min-width: 140px;
+}
+
+.search-box {
+    position: relative;
+    min-width: 280px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-input {
+    padding-left: 38px;
+}
+
+.btn-select {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    background-color: rgba(37, 99, 235, 0.1);
+    transition: background-color 0.2s;
+}
+
+.btn-select:hover {
+    background-color: rgba(37, 99, 235, 0.2);
+}
+
+.test-entry-card {
+    max-width: 800px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.selected-student-box {
+    padding: 10px 14px;
+    background-color: rgba(37, 99, 235, 0.05);
+    border: 1px dashed var(--primary);
+    border-radius: var(--radius-md);
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.py-4 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
